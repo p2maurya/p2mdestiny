@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+:root {
+  /* LandLink token system */
+  --ink: #12172b;          /* deep navy - hero bg, dark sections */
+  --ink-soft: #1c2340;      /* elevated navy panels */
+  --sand: #f6f1e7;          /* warm light bg */
+  --paper: #fffdf9;         /* card surfaces on sand */
+  --ember: #e3a857;         /* gold accent - CTAs, price highlights */
+  --ember-deep: #c88a3a;
+  --teal: #1f6f63;          /* secondary accent - verified, nature */
+  --teal-soft: #e4efec;
+  --charcoal: #23262f;      /* body text on light */
+  --mist: #8b8f9e;          /* muted text */
+  --line: #e7e1d4;          /* hairline borders on sand */
+  --line-dark: rgba(255,255,255,0.12);
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-manrope);
+  --font-mono: var(--font-plex-mono);
+
+  --background: var(--sand);
+  --foreground: var(--charcoal);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-sand: var(--sand);
+  --color-paper: var(--paper);
+  --color-ember: var(--ember);
+  --color-ember-deep: var(--ember-deep);
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
+  --color-charcoal: var(--charcoal);
+  --color-mist: var(--mist);
+  --color-line: var(--line);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display), serif;
+}
+
+.font-mono-num {
+  font-family: var(--font-mono), monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Skyline signature element - layered parallax silhouette */
+.skyline {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.skyline-glow {
+  position: absolute;
+  left: 50%;
+  bottom: 18%;
+  width: 640px;
+  height: 640px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(227,168,87,0.35) 0%, rgba(227,168,87,0) 65%);
+}
+
+.skyline-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 140%;
+  height: auto;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .skyline-layer { transform: none !important; }
+}
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 2px;
+}
