@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* LandLink token system */
+  /* p2mdestiny token system */
   --ink: #12172b;          /* deep navy - hero bg, dark sections */
   --ink-soft: #1c2340;      /* elevated navy panels */
   --sand: #f6f1e7;          /* warm light bg */
