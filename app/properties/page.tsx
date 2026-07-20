@@ -6,7 +6,7 @@ import PropertyCard, { PropertyCardData } from "@/components/property/PropertyCa
 import PropertyFilters, { Filters } from "@/components/property/PropertyFilters";
 import { Loader2, SearchX } from "lucide-react";
 
-export default function PropertiesPage() {
+export default function PropertiesPageContent()  {
   const searchParams = useSearchParams();
   const router = useRouter();
 
